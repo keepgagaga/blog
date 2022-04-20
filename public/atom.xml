@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="cn">
+    <title type="text">Sand Blog</title>
+    <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
+    <updated>2022-04-16T21:27:19&#43;08:00</updated>
+    <id>/</id>
+    <link rel="alternate" type="text/html" href="/" />
+    <link rel="self" type="application/atom&#43;xml" href="/atom.xml" />
+    <author>
+            <name>Sand</name>
+            <uri>/</uri>
+            
+                <email>z@ruiruizhang.com</email>
+            </author>
+    <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
+    <generator uri="https://gohugo.io/" version="0.88.1">Hugo</generator>
+        <entry>
+            <title type="text">route and applifecycle</title>
+            <link rel="alternate" type="text/html" href="/posts/route_applifecycle/" />
+            <id>/posts/route_applifecycle/</id>
+            <updated>2022-04-16T21:27:10&#43;08:00</updated>
+            <published>2022-04-16T20:54:20&#43;08:00</published>
+            <author>
+                    <name>Sand</name>
+                    <uri>https://saulzh.github.io/</uri>
+                    <email>z@ruiruizhang.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">遇到一个一环扣一环的坑，真的是绝了。
+在做支付，支付完成后回到订单页面查询是否支付成功，然后更新总金额，但是遇到个诡异的事，成功获取总额后 setState 页面并没有更新总额，还是支付前的金额。
+一步步排查，金额获取到了，是对的，也执行了 setState，也重新 build 了页面，还是不行。
+就在看 build 部分的时候，突然发现热更新后也重新 build 了一次，而 setState 也会触发 build，但由于页面导航我在后面切换成了命名路由，于是接收页面参数的代码就放在了 build 方法里，然后这就会导致使用新的数据重新 build 时，前脚刚把数据更新成新的金额，后脚就在 build 时传入了路由带来的初始数据，于是页面的金额就怎么都不会改变了。
+解决方法就是把获取命名路由参数的步骤提到 initState 方法里，但直接放进去肯定会报错，因为这时候页面还没有绘制好，所以要用 Future.delayed(Duration.zero, () {}) 来包住，这样就可以了。</summary>
+            
+                <content type="html">&lt;p&gt;遇到一个一环扣一环的坑，真的是绝了。&lt;/p&gt;
+&lt;p&gt;在做支付，支付完成后回到订单页面查询是否支付成功，然后更新总金额，但是遇到个诡异的事，成功获取总额后 setState 页面并没有更新总额，还是支付前的金额。&lt;/p&gt;
+&lt;p&gt;一步步排查，金额获取到了，是对的，也执行了 setState，也重新 build 了页面，还是不行。&lt;/p&gt;
+&lt;p&gt;就在看 build 部分的时候，突然发现热更新后也重新 build 了一次，而 setState 也会触发 build，但由于页面导航我在后面切换成了命名路由，于是接收页面参数的代码就放在了 build 方法里，然后这就会导致使用新的数据重新 build 时，前脚刚把数据更新成新的金额，后脚就在 build 时传入了路由带来的初始数据，于是页面的金额就怎么都不会改变了。&lt;/p&gt;
+&lt;p&gt;解决方法就是把获取命名路由参数的步骤提到 initState 方法里，但直接放进去肯定会报错，因为这时候页面还没有绘制好，所以要用 Future.delayed(Duration.zero, () {}) 来包住，这样就可以了。&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">开始记录</title>
+            <link rel="alternate" type="text/html" href="/posts/first/" />
+            <id>/posts/first/</id>
+            <updated>2022-04-16T20:56:49&#43;08:00</updated>
+            <published>2022-04-07T22:36:08&#43;08:00</published>
+            <author>
+                    <name>Sand</name>
+                    <uri>https://saulzh.github.io/</uri>
+                    <email>z@ruiruizhang.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">博客最难的不是搭建，如今在博客模版+GitHub的帮助下，搭建一个博客从未如此简单。
+困难的是写。算上从18年开始第一次折腾博客，到现在也三四年了，但真正写出来的文章屈指可数。
+我有点强迫症，经常会在一些小事情上纠结，比如GitHub账号名我已经修改了不下四五次了，博客模版也折腾好几个，都不太满意，从最早的rails搭建的博客，到express搭建的博客，再到博客模版+GitHub Page，强迫症太难受了。
+好在如今终于明白，对于博客来说，最重要的是去记录，是留下自己过去的痕迹，让自己在三年五年之后还能回忆起当初是如何思考的，虽然有很大概率会觉得之前的想法很蠢，但却不失为一种独特的记忆，毕竟，如果今天能看到小学时候的日记，我想无论当初的记录多蠢，我们都会怀念吧。</summary>
+            
+                <content type="html">&lt;p&gt;博客最难的不是搭建，如今在博客模版+GitHub的帮助下，搭建一个博客从未如此简单。&lt;/p&gt;
+&lt;p&gt;困难的是写。算上从18年开始第一次折腾博客，到现在也三四年了，但真正写出来的文章屈指可数。&lt;/p&gt;
+&lt;p&gt;我有点强迫症，经常会在一些小事情上纠结，比如GitHub账号名我已经修改了不下四五次了，博客模版也折腾好几个，都不太满意，从最早的rails搭建的博客，到express搭建的博客，再到博客模版+GitHub Page，强迫症太难受了。&lt;/p&gt;
+&lt;p&gt;好在如今终于明白，对于博客来说，最重要的是去记录，是留下自己过去的痕迹，让自己在三年五年之后还能回忆起当初是如何思考的，虽然有很大概率会觉得之前的想法很蠢，但却不失为一种独特的记忆，毕竟，如果今天能看到小学时候的日记，我想无论当初的记录多蠢，我们都会怀念吧。&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+</feed>
