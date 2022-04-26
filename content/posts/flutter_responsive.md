@@ -4,6 +4,10 @@ date: 2022-04-26T10:21:00+08:00
 draft: false
 ---
 
+很早之前找到的一个方案，使用下来感觉没啥毛病，除了每个页面都要引入麻烦些，原方案还拓展了 int，但感觉 double 能兼容 int 的绝大部分场景，偷个懒就只用 double 了。
+
+使用的时候按照设计图当前的尺寸改一下 standardWidth ，比如这里的意思就是当前设计图的尺寸是按 750 宽度设计的。
+
 ```dart
 class SizeFit {
   static late MediaQueryData _mediaQueryData;
