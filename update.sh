@@ -1,2 +1,3 @@
-hugo
-cp -R ./public/ ../saulzh.github.io/blog/
+git add .
+git commit -m $1
+git push
