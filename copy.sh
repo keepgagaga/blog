@@ -1,2 +1,2 @@
 hugo
-cp -R ./public/ ../saulzh.github.io/blog/
+cp -R ./public/ ../keepgagaga.github.io/blog/
