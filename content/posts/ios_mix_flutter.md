@@ -1,7 +1,7 @@
 ---
 title: "Ios_mix_flutter"
 date: 2022-04-18T21:17:14+08:00
-draft: true
+draft: false
 ---
 
 采用把 Flutter SDK 及 Flutter 代码通过 CocoaPods 嵌入 iOS 工程里的方法，这种方法要求本地要有 Flutter 开发环境。
